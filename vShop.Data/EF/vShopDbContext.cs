@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using vShop.Data.Configuration;
 using vShop.Data.Entities;
+using vShop.Data.Extension;
 
 namespace vShop.Data.EF
 {
@@ -21,6 +22,9 @@ namespace vShop.Data.EF
 
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
+
+            //Data seeding
+            modelBuilder.Seed();
         }
 
         #region DBSet
